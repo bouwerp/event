@@ -488,6 +488,16 @@ int event_destroy(event_hub *hub) {
                 }
                 free(hub->subscriptions[i]->string_messages);
             }
+            if (hub->subscriptions[i]->binary_messages != NULL && hub->subscriptions[i]->n_binary_messages > 0) {
+                for (int j=0; j<hub->subscriptions[i]->n_binary_messages; j++) {
+                    if (hub->subscriptions[i]->binary_messages[j]->data != NULL) {
+                        free(hub->subscriptions[i]->binary_messages[j]->data);
+                    }
+                    free(hub->subscriptions[i]->binary_messages[j]);
+                }
+                free(hub->subscriptions[i]->string_messages);
+                free(hub->subscriptions[i]->binary_messages);
+            }
             free(hub->subscriptions[i]);
         }
     }
