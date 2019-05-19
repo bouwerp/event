@@ -147,5 +147,10 @@ int event_list_topics(event_hub* hub);
  * @return
  */
 int event_list_subscriptions(event_hub* hub);
+/**
+ * Prints out the string representation of a given binary message.
+ * @param message
+ */
+void event_print_binary_message(binary_message* message);
 
 #endif //EVENT_H

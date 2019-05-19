@@ -381,7 +381,7 @@ int event_publish_binary_message(event_hub *hub, char *topic, binary_message *me
     return EVENT_OK;
 }
 
-void print_binary_message(binary_message* message) {
+void event_print_binary_message(binary_message *message) {
     printf("{");
     if (message != NULL) {
         for (int j=0; j<message->length; j++) {
@@ -414,7 +414,7 @@ int event_list_binary_messages(event_hub *hub, int id, char *topic) {
             printf("found %d binary messages\n", sub->n_binary_messages);
             for (int i=0; i<sub->n_binary_messages; i++) {
                 printf("binary message: {");
-                print_binary_message(sub->binary_messages[i]);
+                event_print_binary_message(sub->binary_messages[i]);
             }
         }
     }
