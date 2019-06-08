@@ -25,6 +25,10 @@ SOFTWARE.
 #ifndef EVENT_H
 #define EVENT_H
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -154,3 +158,7 @@ int event_list_subscriptions(event_hub* hub);
 void event_print_binary_message(binary_message* message);
 
 #endif //EVENT_H
+
+#ifdef __cplusplus
+}
+#endif
