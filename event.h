@@ -69,7 +69,7 @@ typedef struct event_hub_t {
  * @param topic The topic to which a subscription is to be created.
  * @return The new subscription ID.
  */
-long event_subscribe(event_hub* hub, char* topic);
+long event_subscribe(event_hub* hub, const char* topic);
 /**
  * Creates a new subscription to a topic and returns the new subscription ID.
  * @param hub A reference to the event hub instance.
@@ -100,7 +100,7 @@ int event_list_string_messages(event_hub *hub, int id, char *topic);
  * @param message The message to be published.
  * @return Status code.
  */
-int event_publish_string_message(event_hub *hub, char *topic, char *message);
+int event_publish_string_message(event_hub *hub, const char *topic, const char *message);
 /**
  * Publishes a binary message to a topic. All subscriptions to the provided topic will receive the binary message.
  * @param hub A pointer to the message hub.
@@ -108,7 +108,7 @@ int event_publish_string_message(event_hub *hub, char *topic, char *message);
  * @param message The message to be published.
  * @return Status code.
  */
-binary_message *event_read_binary_message(event_hub *hub, int id, char *topic);
+binary_message *event_read_binary_message(event_hub *hub, int id, const char *topic);
 /**
  * Prints a list of all unread binary messages for a topic, for a given subscriber ID.
  * @param hub A pointer to the message hub.
@@ -124,14 +124,14 @@ int event_list_binary_messages(event_hub *hub, int id, char *topic);
  * @param message The message to be published.
  * @return Status code.
  */
-int event_publish_binary_message(event_hub *hub, char *topic, binary_message *message);
+int event_publish_binary_message(event_hub *hub, const char *topic, binary_message *message);
 /**
  * Adds a new topic to which subscriptions can be created and messaged published.
  * @param hub A reference to the event hub instance.
  * @param topic The topic which is to be created.
  * @return A status code.
  */
-int event_add_topic(event_hub* hub, char *topic);
+int event_add_topic(event_hub* hub, const char *topic);
 /**
  * Destroys the event hub, and frees all dynamically allocated memory. This must be done when no more references
  * to the hub are maintained.

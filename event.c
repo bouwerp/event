@@ -48,7 +48,7 @@ const struct binary_message_t NEW_BINARY_MESSAGE = {
         0
 };
 
-int find_subscription_index(event_hub *hub, int id, char *topic) {
+int find_subscription_index(event_hub *hub, int id, const char *topic) {
     if (hub == NULL) {
         return -1;
     }
@@ -64,7 +64,7 @@ int find_subscription_index(event_hub *hub, int id, char *topic) {
     return -1;
 }
 
-long event_subscribe(event_hub *hub, char *topic) {
+long event_subscribe(event_hub *hub, const char *topic) {
     if (hub == NULL) {
         return EVENT_NO_HUB;
     }
@@ -225,7 +225,7 @@ char *event_read_string_message(event_hub *hub, int id, char *topic) {
     }
 }
 
-binary_message *event_read_binary_message(event_hub *hub, int id, char *topic) {
+binary_message *event_read_binary_message(event_hub *hub, int id, const char *topic) {
     if (hub == NULL) {
         return NULL;
     }
@@ -286,7 +286,7 @@ binary_message *event_read_binary_message(event_hub *hub, int id, char *topic) {
     }
 }
 
-int event_publish_string_message(event_hub *hub, char *topic, char *message) {
+int event_publish_string_message(event_hub *hub, const char *topic, const char *message) {
     if (hub == NULL) {
         return EVENT_NO_HUB;
     }
@@ -331,7 +331,7 @@ int event_publish_string_message(event_hub *hub, char *topic, char *message) {
     return EVENT_OK;
 }
 
-int event_publish_binary_message(event_hub *hub, char *topic, binary_message *message) {
+int event_publish_binary_message(event_hub *hub, const char *topic, binary_message *message) {
     if (hub == NULL) {
         return EVENT_NO_HUB;
     }
@@ -437,7 +437,7 @@ int event_list_topics(event_hub *hub) {
     return EVENT_OK;
 }
 
-int event_add_topic(event_hub *hub, char *topic) {
+int event_add_topic(event_hub *hub, const char *topic) {
     if (hub == NULL) {
         return EVENT_NO_HUB;
     }
