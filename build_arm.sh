@@ -2,5 +2,5 @@
 # Example build for ARM 6 architecture, utilising crosstool-ng.
 
 rm -f event.o libevent.a
-/Volumes/crosstool/x-tools/armv6-rpi-linux-gnueabi/bin/armv6-rpi-linux-gnueabi-gcc -c event.c
-/Volumes/crosstool/x-tools/armv6-rpi-linux-gnueabi/bin/armv6-rpi-linux-gnueabi-ar rvs libevent.a event.o
+/Volumes/toolchains/arm-unknown-linux-gnueabi/bin/arm-unknown-linux-gnueabi-gcc -c event.c
+/Volumes/toolchains/arm-unknown-linux-gnueabi/bin/arm-unknown-linux-gnueabi-ar rvs libevent.a event.o
