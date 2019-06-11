@@ -1,5 +1,5 @@
 set(CMAKE_SYSTEM_NAME Linux)
-set(CMAKE_SYSTEM_PROCESSOR ARM)
+set(CMAKE_SYSTEM_PROCESSOR arm)
 
 set(CMAKE_SYSROOT /Volumes/crosstool/x-tools/armv6-rpi-linux-gnueabi/armv6-rpi-linux-gnueabi/sysroot)
 
