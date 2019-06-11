@@ -23,6 +23,9 @@ SOFTWARE.
  */
 
 #include "event.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 // zero initialiser for hub
 const struct event_hub_t NEW_EVENT_HUB = {
